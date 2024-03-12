@@ -3,7 +3,7 @@ export default `/*自定义样式，实时生效*/
 /*自定义样式，实时生效*/
 
 /* 全局属性
-* 页边距 padding:30px;
+* 页边距 padding:10px;
 * 全文字体 font-family:optima-Regular;
 * 英文换行 word-break:break-all;
 color:#2b2b2b;
