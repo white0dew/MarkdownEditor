@@ -1,0 +1,12 @@
+./build
+./dist
+./node_modules
+./.sfdx
+./.idea
+./.vscode
+./.gitattributes
+./.git
+.yarnrc
+.yarnrc.yml
+.eslintrc.js
+.yarn
