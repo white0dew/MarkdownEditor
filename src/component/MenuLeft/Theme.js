@@ -49,7 +49,9 @@ class Theme extends React.Component {
       { themeId: "1", name: "橙心", css: TEMPLATE.theme.one },
       { themeId: "2", name: "姹紫", css: TEMPLATE.theme.two },
       { themeId: "3", name: "嫩青", css: TEMPLATE.theme.three },
-      { themeId: "4", name: "绿意", css: TEMPLATE.theme.four },
+      { themeId: "15", name: "橙蓝风", css: TEMPLATE.theme.fifteen },
+      { themeId: "16", name: "前端之巅同款", css: TEMPLATE.theme.nine },
+      { themeId: "13", name: "全栈蓝", css: TEMPLATE.theme.thirteen },
       { themeId: "5", name: "红绯", css: TEMPLATE.theme.five },
       { themeId: "6", name: "蓝莹", css: TEMPLATE.theme.six },
       { themeId: "7", name: "兰青", css: TEMPLATE.theme.seven },
@@ -58,10 +60,10 @@ class Theme extends React.Component {
       { themeId: "10", name: "极客黑", css: TEMPLATE.theme.ten },
       { themeId: "11", name: "蔷薇紫", css: TEMPLATE.theme.eleven },
       { themeId: "12", name: "萌绿风", css: TEMPLATE.theme.twelve },
-      { themeId: "13", name: "全栈蓝", css: TEMPLATE.theme.thirteen },
+
       { themeId: "14", name: "极简黑", css: TEMPLATE.theme.fourteen },
-      { themeId: "15", name: "橙蓝风", css: TEMPLATE.theme.fifteen },
-      { themeId: "16", name: "前端之巅同款", css: TEMPLATE.theme.nine },
+
+      { themeId: "4", name: "绿意", css: TEMPLATE.theme.four },
       { themeId: "custom", name: "自定义", css: TEMPLATE.theme.custom }
     ];
 

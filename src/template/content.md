@@ -3,7 +3,7 @@
 请阅读下方文本熟悉工具使用方法，本文可直接拷贝到微信中预览。
 
 欢迎关注公众号，获取更多的小工具!
-![](https://my-wechat.mdnice.com/wechat.jpg)
+![img](https://www.oss-images01.aistar.online/2024/03/124cbc477d89dfaba272001aa2b89677.jpeg)
 
 
 ## 1 Markdown Nice 简介
@@ -12,7 +12,6 @@
 - 支持微信公众号、知乎和稀土掘金
 - 支持以 PDF 和 Markdown 格式的文件导出
 
-![](https://my-wechat.mdnice.com/wechat.jpg)
 
 ## 2 主题
 
