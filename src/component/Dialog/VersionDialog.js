@@ -1,8 +1,8 @@
-import React, {Component} from "react";
-import {observer, inject} from "mobx-react";
-import {Modal, Timeline, Button} from "antd";
+import React, { Component } from "react";
+import { observer, inject } from "mobx-react";
+import { Modal, Timeline, Button } from "antd";
 import axios from "axios";
-import {NEWEST_VERSION} from "../../utils/constant";
+import { NEWEST_VERSION } from "../../utils/constant";
 import SvgIcon from "../../icon";
 
 import "./VersionDialog.css";
@@ -17,7 +17,7 @@ class VersionDialog extends Component {
       versionNumber: 0,
       versionTimeline: [],
       recommend: null,
-      specialInfo: "",
+      specialInfo: ""
     };
   }
 
@@ -31,12 +31,13 @@ class VersionDialog extends Component {
 
   handleMore = () => {
     const w = window.open("about:blank");
-    w.location.href = "https://github.com/mdnice/markdown-nice/blob/master/CHANGELOG.md";
+    w.location.href =
+      "https://github.com/mdnice/markdown-nice/blob/master/CHANGELOG.md";
   };
 
   handleDocs = () => {
     const w = window.open("about:blank");
-    w.location.href = "https://github.com/shenweiyan/Markdown2Html";
+    w.location.href = "https://github.com/white0dew/MarkdownEditor";
   };
 
   componentDidMount = async () => {
@@ -44,12 +45,17 @@ class VersionDialog extends Component {
       const data = {
         versionId: 1,
         versionNumber: "1.0.0",
-        versionTimeline: ["2023-09-20 增加网格黑主题", "2023-09-14 解决超链接文字复制到公众号颜色失效的问题", "2023-09-01 优化部分配置与信息", "2023-08-30 Fork 自 markdown2html"],
+        versionTimeline: [
+          "2023-09-20 增加网格黑主题",
+          "2023-09-14 解决超链接文字复制到公众号颜色失效的问题",
+          "2023-09-01 优化部分配置与信息",
+          "2023-08-30 Fork 自 markdown2html"
+        ],
         recommend: {
           link: "https://github.com/shenweiyan/Knowledge-Garden",
-          mainInfo: "欢迎关注我的知识花园",
+          mainInfo: "欢迎关注我的知识花园"
         },
-        specialInfo: ''
+        specialInfo: ""
         //specialInfo:
         //  '<div style="display:flex;justify-content:center;align-items:center;"><img style="width:50%;" src="http://md.aizhuanqian.online/img/wechat_qr.df324554.jpeg"/></div>',
       };
@@ -58,7 +64,7 @@ class VersionDialog extends Component {
         this.props.dialog.setVersionOpen(true);
         localStorage.setItem(NEWEST_VERSION, data.versionNumber);
       }
-      this.setState({...data});
+      this.setState({ ...data });
     } catch (err) {
       console.error("读取最新版本信息错误");
     }
@@ -74,24 +80,27 @@ class VersionDialog extends Component {
         footer={[
           <Button key="submit" type="primary" onClick={this.handleOk}>
             确认
-          </Button>,
+          </Button>
         ]}
         destroyOnClose
       >
         <Timeline>
-          <Timeline.Item dot={<SvgIcon name="environment" style={style.svgIcon} />}>
-              <strong>更多版本更新与说明信息请查看
-                <a
-                  id="more-info"
-                  style={{fontWeight: "bold", borderBottom: "solid"}}
-                  alt=""
-                  href="https://github.com/shenweiyan/Markdown2Html"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  这里
-                </a>
-              </strong>
+          <Timeline.Item
+            dot={<SvgIcon name="environment" style={style.svgIcon} />}
+          >
+            <strong>
+              更多版本更新与说明信息请查看
+              <a
+                id="more-info"
+                style={{ fontWeight: "bold", borderBottom: "solid" }}
+                alt=""
+                href="https://github.com/white0dew/MarkdownEditor"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                这里
+              </a>
+            </strong>
           </Timeline.Item>
           {this.state.versionTimeline.map((version, index) => {
             /*if (index === 0) {
@@ -109,9 +118,9 @@ class VersionDialog extends Component {
             了解更多，请查看
             <a
               id="nice-version-dialog-doc"
-              style={{fontWeight: "bold"}}
+              style={{ fontWeight: "bold" }}
               alt=""
-              href="https://github.com/shenweiyan/Markdown2Html"
+              href="https://github.com/white0dew/MarkdownEditor"
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -122,7 +131,7 @@ class VersionDialog extends Component {
             <Timeline.Item dot={<SvgIcon name="more" style={style.svgIcon} />}>
               <a
                 id="nice-version-dialog-recommend"
-                style={{fontWeight: "bold", borderBottom: "double"}}
+                style={{ fontWeight: "bold", borderBottom: "double" }}
                 alt=""
                 href={this.state.recommend.link}
                 rel="noopener noreferrer"
@@ -136,7 +145,7 @@ class VersionDialog extends Component {
         {this.state.specialInfo && (
           <div
             id="nice-version-dialog-special"
-            dangerouslySetInnerHTML={{__html: this.state.specialInfo}}
+            dangerouslySetInnerHTML={{ __html: this.state.specialInfo }}
             className="specialInfo"
           />
         )}
@@ -148,8 +157,8 @@ class VersionDialog extends Component {
 const style = {
   svgIcon: {
     width: "16px",
-    height: "16px",
-  },
+    height: "16px"
+  }
 };
 
 export default VersionDialog;

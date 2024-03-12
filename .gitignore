@@ -10,3 +10,5 @@
 .yarnrc.yml
 .eslintrc.js
 .yarn
+.github
+node_modules

@@ -1,6 +1,10 @@
-请使用 **Chrome** 浏览器。
+推荐请使用 **Chrome** 浏览器。
 
 请阅读下方文本熟悉工具使用方法，本文可直接拷贝到微信中预览。
+
+欢迎关注公众号，获取更多的小工具!
+![](https://my-wechat.mdnice.com/wechat.jpg)
+
 
 ## 1 Markdown Nice 简介
 

@@ -1,6 +1,6 @@
-import React, {Component} from "react";
-import {observer, inject} from "mobx-react";
-import {Modal, Button} from "antd";
+import React, { Component } from "react";
+import { observer, inject } from "mobx-react";
+import { Modal, Button } from "antd";
 
 @inject("dialog")
 @observer
@@ -30,10 +30,10 @@ class AboutDialog extends Component {
         footer={[
           <Button key="submit" type="primary" onClick={this.handleOk}>
             确认
-          </Button>,
+          </Button>
         ]}
         bodyStyle={{
-          paddingTop: "5px",
+          paddingTop: "5px"
         }}
       >
         <h3 style={style.headerMargin}>
@@ -42,10 +42,14 @@ class AboutDialog extends Component {
             id="nice-about-dialog-star"
             rel="noopener noreferrer"
             target="_blank"
-            href="https://github.com/shenweiyan/Markdown2Html"
+            href="https://github.com/white0dew/MarkdownEditor"
             style={style.noBorder}
           >
-            <img alt="" style={style.img} src="https://badgen.net/github/stars/shenweiyan/Markdown2Html" />
+            <img
+              alt=""
+              style={style.img}
+              src="https://badgen.net/github/stars/shenweiyan/Markdown2Html"
+            />
           </a>
         </h3>
 
@@ -57,7 +61,7 @@ class AboutDialog extends Component {
             id="nice-about-dialog-github"
             rel="noopener noreferrer"
             target="_blank"
-            href="https://github.com/shenweiyan/Markdown2Html"
+            href="https://github.com/white0dew/MarkdownEditor"
           >
             &nbsp;GitHub&nbsp;
           </a>
@@ -70,31 +74,31 @@ class AboutDialog extends Component {
 const style = {
   leftImgWidth: {
     width: "40%",
-    height: "100%",
+    height: "100%"
   },
   rightImgWidth: {
     width: "60%",
-    height: "100%",
+    height: "100%"
   },
   headerMargin: {
     marginTop: "5px",
     marginBottom: "5px",
-    color: "black",
+    color: "black"
   },
   lineHeight: {
     lineHeight: "26px",
     color: "black",
     padding: 0,
-    margin: 0,
+    margin: 0
   },
   img: {
     width: "70px",
     marginLeft: "10px",
-    display: "inline-block",
+    display: "inline-block"
   },
   noBorder: {
-    border: "none",
-  },
+    border: "none"
+  }
 };
 
 export default AboutDialog;
