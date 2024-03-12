@@ -5,12 +5,12 @@
   "version": "1.0.0",
   "main": "lib/Lib.js",
   "module": "lib/Lib.js",
-  "homepage": "http://md.aizhuanqian.online",
+  "homepage": "http://md.aistar.cool",
   "license": "GPL-3.0",
   "typings": "./lib/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/TaleAi/markdown2html"
+    "url": "https://github.com/white0dew/MarkdownEditor"
   },
   "scripts": {
     "start": "node scripts/start.js",
