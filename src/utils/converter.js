@@ -1,5 +1,5 @@
 import juice from "juice";
-import {message} from "antd";
+import { message } from "antd";
 import {
   BASIC_THEME_ID,
   CODE_THEME_ID,
@@ -7,7 +7,7 @@ import {
   LAYOUT_ID,
   BOX_ID,
   FONT_THEME_ID,
-  MJX_DATA_FORMULA,
+  MJX_DATA_FORMULA
 } from "./constant";
 
 export const solveWeChatMath = () => {
@@ -48,7 +48,8 @@ export const solveZhihuMath = () => {
       data += "\\\\";
     }
 
-    mjx.outerHTML = '<img class="Formula-image" data-eeimg="true" src="" alt="' + data + '">';
+    mjx.outerHTML =
+      '<img class="Formula-image" data-eeimg="true" src="" alt="' + data + '">';
   }
 };
 
@@ -74,7 +75,7 @@ export const solveJuejinMath = () => {
 };
 
 // 掘金单独处理代码块
-export const solveJuejinCode = (html) => {
+export const solveJuejinCode = html => {
   // 掘金代码不换行问题
   const brReg = /<pre([^>])*class="custom"([^>])*>(.*?)<\/pre>/g;
   const brMatchList = html.match(brReg);
@@ -95,7 +96,7 @@ export const addJuejinSuffix = () => {
   const suffix = document.createElement("p");
   suffix.id = "nice-suffix-juejin-container";
   suffix.className = "nice-suffix-juejin-container";
-  suffix.innerHTML = `本文使用 <a href="https://mdnice.com/?from=juejin">mdnice</a> 排版`;
+  // suffix.innerHTML = `本文使用 <a href="https://mdnice.com/?from=juejin">mdnice</a> 排版`;
 
   const element = document.getElementById(LAYOUT_ID);
   element.appendChild(suffix);
@@ -109,7 +110,10 @@ export const solveHtml = () => {
     item.setAttribute("data-tool", "mdnice编辑器");
   }
   let html = element.innerHTML;
-  html = html.replace(/<mjx-container (class="inline.+?)<\/mjx-container>/g, "<span $1</span>");
+  html = html.replace(
+    /<mjx-container (class="inline.+?)<\/mjx-container>/g,
+    "<span $1</span>"
+  );
   html = html.replace(/\s<span class="inline/g, '&nbsp;<span class="inline');
   html = html.replace(/svg><\/span>\s/g, "svg></span>&nbsp;");
   html = html.replace(/mjx-container/g, "section");
@@ -121,10 +125,14 @@ export const solveHtml = () => {
   const fontStyle = document.getElementById(FONT_THEME_ID).innerText;
   let res = "";
   try {
-    res = juice.inlineContent(html, basicStyle + markdownStyle + codeStyle + fontStyle, {
-      inlinePseudoElements: true,
-      preserveImportant: true,
-    });
+    res = juice.inlineContent(
+      html,
+      basicStyle + markdownStyle + codeStyle + fontStyle,
+      {
+        inlinePseudoElements: true,
+        preserveImportant: true
+      }
+    );
   } catch (e) {
     message.error("请检查 CSS 文件是否编写正确！");
   }
@@ -132,7 +140,7 @@ export const solveHtml = () => {
   return res;
 };
 
-export const copySafari = (text) => {
+export const copySafari = text => {
   // 获取 input
   let input = document.getElementById("copy-input");
   if (!input) {
